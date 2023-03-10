@@ -31,146 +31,147 @@ class _DashscreenState extends State<Dashscreen> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.blue,
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: 15),
-              Text(
-                "Explore Product",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 30,
-                    letterSpacing: 2),
-              ),
-              // SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.only(right: 25.0),
-                      child: Container(
-                        height: 50,
-                        width: 200,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Colors.white),
-                        child: TextField(
-                          style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w200,
-                              color: Colors.grey.shade400),
-                          decoration: InputDecoration(
-                              border: InputBorder.none,
-                              prefixIcon: Icon(Icons.search,
-                                  color: Colors.grey.shade400, size: 20),
-                              hintText: "Search product"),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15.0),
+            child: Column(
+              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: 30),
+                Text(
+                  "Explore Product",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30,
+                      letterSpacing: 2),
+                ),
+                SizedBox(height: 35),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 25.0),
+                        child: Container(
+                          height: 50,
+                          width: 200,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Colors.white),
+                          child: TextField(
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black),
+                            decoration: InputDecoration(
+                                border: InputBorder.none,
+                                prefixIcon: Icon(Icons.search,
+                                    color: Colors.black, size: 20),
+                                hintText: "Search product"),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 15.0),
-                    child: Container(
-                      height: 50,
-                      width: 70,
-                      child: Icon(Icons.camera_alt_outlined,
-                          color: Colors.blue, size: 25),
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10)),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 15.0),
+                      child: Container(
+                        height: 50,
+                        width: 70,
+                        child: Icon(Icons.camera_alt_outlined,
+                            color: Colors.blue, size: 25),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10)),
+                      ),
                     ),
-                  ),
-                ],
-              ),
-              // SizedBox(height: 10),
-              Row(
-                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Items",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 18),
-                  ),
-                  Icon(Icons.arrow_drop_down, color: Colors.white, size: 20),
-                  SizedBox(width: 15),
-                  Text(
-                    "List",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 18),
-                  ),
-                ],
-              ),
-              // SizedBox(height: 15),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: img
-                      .asMap()
-                      .entries
-                      .map((e) => InkWell(
-                          onTap: () {
-                            setState(() {
+                  ],
+                ),
+                SizedBox(height: 35),
+                Row(
+                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Accessories",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 18),
+                    ),
+                    Icon(Icons.arrow_drop_down, color: Colors.white, size: 20),
+                    SizedBox(width: 15),
+                    Text(
+                      "Mobile",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 18),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 35),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: img
+                        .asMap()
+                        .entries
+                        .map((e) => InkWell(
+                            onTap: () {
                               Data d1 = Data(
-                                data: data[e.key],
                                 img: img[e.key],
                                 name: name[e.key],
                                 price: price[e.key],
                               );
-                              Navigator.pushNamed(context, 'details',arguments: d1);
-                            });
-                          },
-                          child: box(img[e.key], price[e.key], name[e.key],data[e.key])))
-                      .toList(),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 30.0),
-                child: Container(
-                  height: 80,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      button(
-                        Icon(Icons.favorite_border,
-                            color: Colors.white, size: 25),
-                      ),
-                      button(
-                        Icon(Icons.tune, color: Colors.white, size: 25),
-                      ),
-                      button(
-                        Icon(Icons.shopping_bag_outlined,
-                            color: Colors.white, size: 25),
-                      ),
-                    ],
+                                 Navigator.pushNamed(context, 'detail',arguments: d1);
+
+                            },
+                            child: box(img[e.key], price[e.key], name[e.key])))
+                        .toList(),
                   ),
                 ),
-              ),
-              SizedBox(height: 10),
-            ],
+                SizedBox(height: 50),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                  child: Container(
+                    height: 80,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        button(
+                          Icon(Icons.favorite_border,
+                              color: Colors.white, size: 25),
+                        ),
+                        button(
+                          Icon(Icons.tune, color: Colors.white, size: 25),
+                        ),
+                        button(
+                          Icon(Icons.shopping_bag_outlined,
+                              color: Colors.white, size: 25),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                // SizedBox(height: 20),
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 
-  Widget box(String img, String price, String name,String data) {
+  Widget box(String img, String price, String name) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      padding: const EdgeInsets.symmetric(horizontal: 10.0),
       child: Container(
         width: 200,
         height: 400,
