@@ -126,7 +126,7 @@ class _DashscreenState extends State<Dashscreen> {
                                 name: name[e.key],
                                 price: price[e.key],
                               );
-                              Navigator.pushNamed(context, 'details',arguments: d1);
+                              Navigator.pushNamed(context, 'detail',arguments: d1);
                             });
                           },
                           child: box(img[e.key], price[e.key], name[e.key],data[e.key])))
