@@ -1,4 +1,4 @@
-import 'package:exam1/modal_class.dart';
+import 'package:exam1/productmodel.dart';
 import 'package:flutter/material.dart';
 
 class Dashscreen extends StatefulWidget {
@@ -9,21 +9,148 @@ class Dashscreen extends StatefulWidget {
 }
 
 class _DashscreenState extends State<Dashscreen> {
-  List img = [
-    "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/41GtAI8TybL._SX300_SY300_QL70_FMwebp_.jpg",
-    "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/41WCgGbvwhL._SX300_SY300_QL70_FMwebp_.jpg",
-    "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/314Rp+8XKWL._SX342_SY445_.jpg",
-    "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71vFKBpKakL._AC_UY218_.jpg",
-    "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/31+KEhn35VL._SX342_SY445_.jpg"
+  List<ProductModel> filterlist = [
+    ProductModel(
+      name: "jeans",
+      category: "fashion",
+      price: "1,500",
+      img:
+          "https://rukminim1.flixcart.com/image/832/832/jean/n/u/3/bmw-darklevis-ben-martin-32-original-imaedpc4zcgjadsv.jpeg?q=70",
+      data: "Men Regular Mid Rise Dark Blue Jeans",
+    ),
+    ProductModel(
+      name: "Tshirt nike",
+      category: "fashion",
+      price: "2000",
+      img:
+          "https://rukminim1.flixcart.com/image/832/832/xif0q/t-shirt/x/9/3/-original-imaghg2hdhzwysdh.jpeg?q=70",
+      data: "Dri-FIT Men Printed Round Neck Blue T-Shirt",
+    ),
+    ProductModel(
+      name: "Women jeans",
+      category: "fashion",
+      price: "7,000",
+      img:
+          "https://rukminim1.flixcart.com/image/832/832/xif0q/jean/v/8/d/34-gtladiesjeans140-guti-original-imagg2gxuc56hzvz.jpeg?q=70",
+      data:
+          "The blue shade of jeans is too good...i really love it ... it's very comfortable and fabric is also good",
+    ),
+    ProductModel(
+      name: "oppo find n2 flip",
+      category: "mobile",
+      price: "5,000",
+      img:
+          "https://rukminim1.flixcart.com/image/416/416/xif0q/mobile/n/z/u/-original-imagndwg4v7crhhd.jpeg?q=70",
+      data:
+          "Treat yourself to a fantastic smartphone that is packed with amazing features and helps you get things done without sacrificing entertainment value",
+    ),
+    ProductModel(
+      name: "moto g32",
+      category: "mobile",
+      price: "15,000",
+      img:
+          "https://rukminim1.flixcart.com/image/416/416/xif0q/mobile/m/j/j/-original-imagnvvwvzyhfvx9.jpeg?q=70",
+      data:
+          "You can experience lag-free gaming, fluid multitasking, and stunning, stutter-free images with the Moto G32.",
+    ),
+    ProductModel(
+      name: "Poco c50",
+      category: "mobile",
+      price: "10,000",
+      img:
+          "https://rukminim1.flixcart.com/image/416/416/xif0q/mobile/t/a/x/-original-imaghmtch6qfmfxg.jpeg?q=70",
+      data:
+          "Treat yourself to the POCO C50, which has a plethora of innovative capabilities, and take advantage of a seamless smartphone experience",
+    ),
   ];
-  List name = ["Airpods", "watch", "i phone13", "Macbook", "ipad"];
-  List price = ["2,000", "3,500", "45,000", "1,30,000", "40,000"];
-  List data = [
-    "Amazon Basics Bluetooth 5.0 Truly Wireless in Ear Earbuds with mic, Up to 38 Hours Playtime, IPX-5 Rated, Type-C Charging Case, Touch Controls, Voice Asst Black",
-    "Fire-Boltt Gladiator 1.96 Biggest Display Smart Watch with Bluetooth Calling, Voice Assistant &123 Sports Modes, 8 Unique UI Interactions, SpO2, 24/7 Heart Rate Tracking, Rs 100 Off on UPI",
-    "Apple iPhone 13 (128GB) - Starlight",
-    "Apple 2020 MacBook Air Laptop M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver",
-    "Apple 2021 10.2-inch (25.91 cm) iPad with A13 Bionic chip (Wi-Fi, 64GB) - Space Grey (9th Generation)"
+  List<ProductModel> productlist = [
+    ProductModel(
+      name: "i phone13",
+      category: "mobile",
+      price: "50,000",
+      img:
+          "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MM2Y3?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1630507733000",
+      data:
+          "Loaded with the next-generation mobile data network of 5G speed support, buy Apple iPhone 13 online, which comes loaded with various new specifications.",
+    ),
+    ProductModel(
+      name: "oppo find n2 flip",
+      category: "mobile",
+      price: "5,000",
+      img:
+          "https://rukminim1.flixcart.com/image/416/416/xif0q/mobile/n/z/u/-original-imagndwg4v7crhhd.jpeg?q=70",
+      data:
+          "Treat yourself to a fantastic smartphone that is packed with amazing features and helps you get things done without sacrificing entertainment value",
+    ),
+    ProductModel(
+      name: "moto g32",
+      category: "mobile",
+      price: "15,000",
+      img:
+          "https://rukminim1.flixcart.com/image/416/416/xif0q/mobile/m/j/j/-original-imagnvvwvzyhfvx9.jpeg?q=70",
+      data:
+          "You can experience lag-free gaming, fluid multitasking, and stunning, stutter-free images with the Moto G32.",
+    ),
+    ProductModel(
+      name: "Poco c50",
+      category: "mobile",
+      price: "10,000",
+      img:
+          "https://rukminim1.flixcart.com/image/416/416/xif0q/mobile/t/a/x/-original-imaghmtch6qfmfxg.jpeg?q=70",
+      data:
+          "Treat yourself to the POCO C50, which has a plethora of innovative capabilities, and take advantage of a seamless smartphone experience",
+    ),
+    ProductModel(
+      name: "Asus Rog 5",
+      category: "mobile",
+      price: "40,000",
+      img:
+          "https://dlcdnwebimgs.asus.com/gain/D551F7D4-8AC9-4299-A93D-3860DFC9D573",
+      data:
+          "Handset, USB Power Adapter (30W), Type C to Type C Cable, Documentation (User Guide, Warranty Card), Ejector Pin (Sim Tray Needle), Bumper",
+    ),
+    //fashion
+    ProductModel(
+      name: "jeans",
+      category: "fashion",
+      price: "1,500",
+      img:
+          "https://rukminim1.flixcart.com/image/832/832/jean/n/u/3/bmw-darklevis-ben-martin-32-original-imaedpc4zcgjadsv.jpeg?q=70",
+      data: "Men Regular Mid Rise Dark Blue Jeans",
+    ),
+    ProductModel(
+      name: "Tshirt nike",
+      category: "fashion",
+      price: "2000",
+      img:
+          "https://rukminim1.flixcart.com/image/832/832/xif0q/t-shirt/x/9/3/-original-imaghg2hdhzwysdh.jpeg?q=70",
+      data: "Dri-FIT Men Printed Round Neck Blue T-Shirt",
+    ),
+    ProductModel(
+      name: "Women jeans",
+      category: "fashion",
+      price: "7,000",
+      img:
+          "https://rukminim1.flixcart.com/image/832/832/xif0q/jean/v/8/d/34-gtladiesjeans140-guti-original-imagg2gxuc56hzvz.jpeg?q=70",
+      data:
+          "The blue shade of jeans is too good...i really love it ... it's very comfortable and fabric is also good",
+    ),
+    ProductModel(
+      name: "boy casual shoes",
+      category: "fashion",
+      price: "1000",
+      img:
+          "https://rukminim1.flixcart.com/image/832/832/xif0q/kids-shoe/u/s/c/3c-hike-shoes-neobaby-original-imagnypbh9kvgqhm.jpeg?q=70",
+      data: "Lace Walking Shoes For Boys & Girls  (Black)",
+    ),
+    ProductModel(
+      name: "women tshirt",
+      category: "fashion",
+      price: "500",
+      img:
+          "https://rukminim1.flixcart.com/image/832/832/kz5vwy80/sweatshirt/0/2/c/11-12-years-swt-fs-a0-p1-x2o-original-imagb8he5fgwzrgy.jpeg?q=70",
+      data: "Boys & Girls Full Sleeve Printed Sweatshirt",
+    ),
   ];
 
   @override
@@ -92,44 +219,82 @@ class _DashscreenState extends State<Dashscreen> {
                 Row(
                   // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      "Accessories",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 18),
+                    InkWell(
+                      onTap: () {
+                        filterlist = [];
+                        setState(() {
+                          filterlist = productlist;
+                        });
+                      },
+                      child: Text(
+                        "All",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 18),
+                      ),
                     ),
-                    Icon(Icons.arrow_drop_down, color: Colors.white, size: 20),
                     SizedBox(width: 15),
-                    Text(
-                      "Mobile",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 18),
+                    InkWell(
+                      onTap: () {
+                        filterlist = [];
+                        for (int i = 0; i < productlist.length; i++) {
+                          if (productlist[i].category == "mobile") {
+                            setState(() {
+                              filterlist.add(productlist[i]);
+                            });
+                          }
+                        }
+                      },
+                      child: Text(
+                        "Mobile",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 18),
+                      ),
+                    ),
+                    SizedBox(width: 15),
+                    InkWell(
+                      onTap: () {
+                        filterlist = [];
+                        for (int i = 0; i < productlist.length; i++) {
+                          if (productlist[i].category == "fashion") {
+                            setState(() {
+                              filterlist.add(productlist[i]);
+                            });
+                          }
+                        }
+                      },
+                      child: Text(
+                        "Fashion",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 18),
+                      ),
                     ),
                   ],
                 ),
                 SizedBox(height: 35),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: img
-                        .asMap()
-                        .entries
-                        .map((e) => InkWell(
-                            onTap: () {
-                              Data d1 = Data(
-                                img: img[e.key],
-                                name: name[e.key],
-                                price: price[e.key],
-                              );
-                                 Navigator.pushNamed(context, 'detail',arguments: d1);
-
-                            },
-                            child: box(img[e.key], price[e.key], name[e.key])))
-                        .toList(),
+                SizedBox(
+                  height: 420,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) {
+                      return InkWell(
+                          onTap: () {
+                            ProductModel p = ProductModel(
+                                img: filterlist[index].img,
+                                price: filterlist[index].price,
+                                data: filterlist[index].data,
+                                name: filterlist[index].name);
+                            Navigator.pushNamed(context, 'detail',
+                                arguments: p);
+                          },
+                          child: box(filterlist[index]));
+                    },
+                    itemCount: filterlist.length,
                   ),
                 ),
                 SizedBox(height: 50),
@@ -169,12 +334,13 @@ class _DashscreenState extends State<Dashscreen> {
     );
   }
 
-  Widget box(String img, String price, String name) {
+  Widget box(ProductModel p) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10.0),
       child: Container(
         width: 200,
         height: 400,
+        margin: EdgeInsets.all(5),
         // alignment: Alignment.center,
         decoration: BoxDecoration(
           color: Colors.white,
@@ -183,7 +349,6 @@ class _DashscreenState extends State<Dashscreen> {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15.0),
           child: Column(
-            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 10),
@@ -208,10 +373,11 @@ class _DashscreenState extends State<Dashscreen> {
                 ],
               ),
               SizedBox(height: 10),
-              Image.network("$img", fit: BoxFit.fill),
+              Image.network("${p.img}",
+                  height: 150, width: 150, fit: BoxFit.fill),
               SizedBox(height: 5),
               Text(
-                "\$ $price",
+                "\$ ${p.price}",
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 20,
@@ -219,7 +385,7 @@ class _DashscreenState extends State<Dashscreen> {
               ),
               SizedBox(height: 10),
               Text(
-                "$name",
+                "${p.name}",
                 style: TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.w400,

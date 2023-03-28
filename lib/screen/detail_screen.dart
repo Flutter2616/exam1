@@ -1,4 +1,4 @@
-import 'package:exam1/modal_class.dart';
+import 'package:exam1/productmodel.dart';
 import 'package:flutter/material.dart';
 
 class Details extends StatefulWidget {
@@ -13,7 +13,7 @@ class _DetailsState extends State<Details> {
 
   @override
   Widget build(BuildContext context) {
-    Data d1=ModalRoute.of(context)!.settings.arguments as Data;
+    ProductModel d1=ModalRoute.of(context)!.settings.arguments as ProductModel;
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
@@ -72,7 +72,7 @@ class _DetailsState extends State<Details> {
                         ],
                       ),
                       Text(
-                        "fhdbhdfgjgjdffvbdfh",
+                        "${d1.data}",
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: 18,
